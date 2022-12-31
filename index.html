@@ -7,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
 </head>
 <body>
     <div class="hero">
@@ -22,41 +21,42 @@
         <div class="header">This form signup won't do anything! In fact, it's just some practice for me to learn how to make forms!<br><br>Could you fill it out anyway, please? </div>
         <div class="form-entry">
             <div class="title">Sign up here!</div>
-            <form>
+            <form id="signup" method="post" onsubmit="return validatePWs()">
                 <div class="form-row">
                     <div class="form-element">
-                        <label></label>
-                        <input>
+                        <label for="first">FIRST NAME</label><br>
+                        <input type="text" id="first" name="first" pattern="^[a-zA-Z\s]+$" placeholder=" " required>
                     </div>
                     <div class="form-element">
-                        <label></label>
-                        <input>
+                        <label for="last">LAST NAME</label><br>
+                        <input type="text" id="last" name="last" pattern="^[a-zA-Z\s]+$" placeholder=" " required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-element">
-                        <label></label>
-                        <input>
+                        <label for="email">EMAIL ADDRESS</label><br>
+                        <input type="email" id="email" placeholder="email@example.com" name="email" required>
                     </div>
                     <div class="form-element">
-                        <label></label>
-                        <input>
+                        <label for="tel">TELEPHONE NUMBER</label><br>
+                        <input type="tel" id="tel" name="tel" placeholder="(###) - ### - ####">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-element">
-                        <label></label>
-                        <input>
+                        <label for="pass">PASSWORD</label><br>
+                        <input type="password" id="pass" name="pass" pattern="^[a-zA-Z0-9!$*#%^]+$" placeholder=" " required>
                     </div>
                     <div class="form-element">
-                        <label></label>
-                        <input>
+                        <label for="pass2">CONFIRM PASSWORD</label><br>
+                        <input type="password" id="pass2" name="pass2" placeholder=" " required>
                     </div>
                 </div>
             </form>
         </div>
-        <button>Create Account</button>
+        <input type="submit" form="signup" value="Create Account"/>
         <div class="footer">Already have an account? We haven't implemented that, too bad.</div>
     </div>
 </body>
+<script src="script.js"></script>
 </html>
