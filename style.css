@@ -1,9 +1,139 @@
 body {
     display: flex;
     align-items: center;
-    justify-content: center;
+    width: 100vw;
+    margin: 0;
+    --def_font: Arial, Helvetica, sans-serif;
+    font-family: var(--def_font);
+    font-size: 12pt;
 }
 
-div {
-    font-size: 72pt;
+.hero {
+    width: 40%;
+    height: 100vh;
+    min-width: 300;
+    flex: 1 0 auto;
+    background-image: url("images/andy-holmes-rlHEHymgAD8-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.hero .header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.532);
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 16pt;
+}
+
+.hero .header img{
+    width: 200px;
+    height: 100px;
+}
+
+.hero .header p{
+    color: fuchsia;
+}
+
+.hero .footer {
+    display: flex;
+    margin-top: 50px;
+    color: rgb(183, 181, 181);
+    font-size: 8pt;
+    font-family: var(--def_font);
+}
+
+.content {
+    width: 60%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 25px 0px;
+    flex: 1 1 auto;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content .header {
+    font-size: 16pt;
+}
+
+.content>.form-entry {
+    margin: 25px 0px;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+    box-shadow: 5px 5px 5px lightgray;
+    color: darkslategray
+}
+
+.form-entry .title{
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.content>*{
+    margin: 0px 25px;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 650px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hero {
+        width: 100vw;
+        height: 150px;
+        background-image: url("images/andy-holmes-rlHEHymgAD8-unsplash.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .content {
+        flex: 0 0;
+        justify-content: flex-start;
+        min-height: calc(100vh - 150px);
+        width: 100vw;
+    }
+
+    .content>*{
+        margin: 0px 50px;
+    }
+
+    .content .form-entry{
+        margin: 25px 0px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .hero .header{
+        background-color: transparent;
+    }
+
+    .hero .header p, .hero .footer{
+        display: none;
+    }
 }
